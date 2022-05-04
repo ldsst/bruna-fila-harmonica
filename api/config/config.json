@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "Thiago",
+    "password": "p@2@8Th2",
+    "database": "filarmonica_hmg",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "Thiago",
+    "password": "p@2@8Th2",
+    "database": "filarmonica_hmg",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "Thiago",
+    "password": "p@2@8Th2",
+    "database": "filarmonica_hmg",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
