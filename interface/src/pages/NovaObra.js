@@ -7,13 +7,42 @@ import {
   Col
 } from 'antd';
 
+import api from '../services/api';
+
 const { Search } = Input;
 
-const NovaObra = () => {
+const initialValuesForm = {
+  nomeObra: '',
+  arranjador: '',
+  anoPeriodoComposicao: '',
+  duracao: '',
+  instrumentacaoCodificada: '',
+  instrumentacaoExtenso: '',
+  movimentos: '',
+  qtdMovimentos: '',
+  detalhesObra: '',
+  efemerides: '',
+  observacoes: '',
+  idCompositor: 11
+}
+
+function NovaObra() {
   const [componentSize] = useState('default');
+  const [valuesForm, setValuesForm] = useState(initialValuesForm);
 
-const onSearch = value => console.log(value);
+  const onSearch = value => console.log(value);
 
+  const handleChange = ({target}) => {
+    const { name, value } = target;
+    
+    setValuesForm({...valuesForm, [name]: value});
+  }
+
+  const saveNewConstruction = () => {
+    api.post('/musicalWork', valuesForm)
+    .then(() => setValuesForm(initialValuesForm))
+    .catch(() => console.log('Houve um problema.'))
+  }
 
   return (
   <Col>
@@ -37,53 +66,103 @@ const onSearch = value => console.log(value);
     >
 
       <Form.Item label="Nome da obra">
-        <Input />
+        <Input
+          value={valuesForm.nomeObra}
+          name="nomeObra"
+          onChange={handleChange}
+         />
       </Form.Item>
 
       <Form.Item label="Arranjador">
-        <Search placeholder="Buscar Arranjador" onSearch={onSearch} enterButton />
+        <Search 
+        value={valuesForm.arranjador}
+        name="arranjador"
+        onChange={handleChange}
+        placeholder="Buscar Arranjador"
+        onSearch={onSearch} 
+        enterButton />
       </Form.Item>
 
       <Form.Item label="Ano / período de composição">
-        <Input />
+        <Input 
+          value={valuesForm.anoPeriodoComposicao}
+          name="anoPeriodoComposicao"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Duração">
-        <Input />
+        <Input 
+          value={valuesForm.duracao}
+          name="duracao"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Instrumentação Codifcada">
-        <Input />
+        <Input 
+          value={valuesForm.instrumentacaoCodificada}
+          name="instrumentacaoCodificada"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Instrumentação por extenso">
-        <Input />
+        <Input
+          value={valuesForm.instrumentacaoExtenso}
+          name="instrumentacaoExtenso"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Movimentos">
-        <Input />
+        <Input 
+          value={valuesForm.movimentos}
+          name="movimentos"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Quantidade de Movimentos">
-        <Input />
+        <Input 
+          value={valuesForm.qtdMovimentos}
+          name="qtdMovimentos"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Detalhes da obra">
-        <Input />
+        <Input 
+          value={valuesForm.detalhesObra}
+          name="detalhesObra"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Efemérides">
-        <Input />
+        <Input
+          value={valuesForm.efemerides} 
+          name="efemerides"
+          onChange={handleChange}
+        />
       </Form.Item>
 
       <Form.Item label="Observações">
-        <Input />
+        <Input 
+          value={valuesForm.observacoes}
+          name="observacoes"
+          onChange={handleChange}
+        />
       </Form.Item>
       
 
       <p></p>
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+        <Button 
+          onClick={ saveNewConstruction }
+          type="primary"
+          htmlType="submit"
+        >
           Salvar
         </Button>
       </Form.Item>

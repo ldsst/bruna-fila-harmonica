@@ -1519,7 +1519,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li.ant-menu-it
   font-weight: 600;
 }
 
-.ant-employed span {
+.ant-employed span.action {
   color: #8c8c8c;
   text-decoration: none;
   font-weight: 600;

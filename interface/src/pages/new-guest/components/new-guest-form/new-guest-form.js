@@ -138,20 +138,14 @@ const NewGuestForm = () => {
         </Select>
       </Form.Item>
       {error && <p className='font-semibold text-muted text-center redtext'>{error}</p>}
-      <Form.Item
-        style={{
-          margin: '0 auto'
-        }}
-      >
-        <Form.Item>
-          {isLoading ? (
-            <Spin size='large' style={{ height: '40px' }} />
-          ) : (
-            <Button style={{ height: '40px' }} type='primary' htmlType='submit'>
-              Salvar
-            </Button>
-          )}
-        </Form.Item>
+      <Form.Item>
+        {isLoading ? (
+          <Spin size='large' style={{ height: '40px' }} />
+        ) : (
+          <Button style={{ height: '40px' }} type='primary' htmlType='submit'>
+            Salvar
+          </Button>
+        )}
       </Form.Item>
     </Form>
   )

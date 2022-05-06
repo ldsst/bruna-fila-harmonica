@@ -93,8 +93,10 @@ function Obra() {
   const [dataConstruction, setDataConstruction] = useState([]);
   
   useEffect(() => {
+    api.get('/songwriter').then(({ data }) => console.log(data))
     api.get('/musicalWork')
     .then(({data}) => {
+      console.log(data)
       const orderData = data.sort((a, b) => a.nomeObra > b.nomeObra ? 1 : -1)
 
       setDataConstruction(orderData);
@@ -129,7 +131,7 @@ function Obra() {
     })
   },[]);
 
-  function searchConstruction({target}) {
+  const searchConstruction = ({target}) => {
     const { value } = target;
     const lowerSearch = value.toLowerCase();
   
