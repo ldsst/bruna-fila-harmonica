@@ -2,7 +2,7 @@ const Services = require('./Services')
 
 class SongwriterService extends Services {
   constructor(){
-    super('compositor')
+    super('Compositor')
   }
 }
 

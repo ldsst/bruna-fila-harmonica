@@ -202,7 +202,7 @@ const TableBody = ({ setApiData, filtredData, isLoading, hasError }) => {
         loading={isLoading || isLoadingDelete}
         pagination={{
           pageSize: 3,
-          defaultCurrent: 1,
+          showSizeChanger: false,
           total: history.length,
           position: ['bottomCenter'],
           showTotal: total => `Total de ${total} históricos`

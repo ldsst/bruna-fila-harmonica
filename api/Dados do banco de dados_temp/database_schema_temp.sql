@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `filarmonica_hmg`.`Historico` (
 -- -----------------------------------------------------
 -- Table `filarmonica_hmg`.`obra`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `filarmonica_hmg`.`obra` (
+CREATE TABLE IF NOT EXISTS `filarmonica_hmg`.`Obra` (
   `idObra` INT NOT NULL AUTO_INCREMENT,
   `nomeObra` VARCHAR(100) NOT NULL,
   `anoPeriodoComposicao` VARCHAR(45) NULL DEFAULT NULL,

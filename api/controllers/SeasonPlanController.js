@@ -9,15 +9,7 @@ class SeasonPlanController {
 
   static async getAllSeasonPlans(req, res) {
     try {
-      const seasonPlan = await PlanoTemporada.findAll({
-        include: [
-          {
-            model: Concerto,
-            as: 'concerto',
-            through: { attributes: [] },
-          },
-        ],
-      });
+      const seasonPlan = await PlanoTemporada.findAll();
   
       return res.status(200).json(seasonPlan);
     } catch (err) {
@@ -29,15 +21,7 @@ class SeasonPlanController {
   static async getSeasonPlan(req, res) {
     try {
       const { id } = req.params;
-      const seasonPlan = await PlanoTemporada.findOne({
-        where: { idPlanoTemporada: id },
-        include: [
-          { model: Concerto, 
-            as: 'concerto', 
-            through: { attributes: [] } 
-          }
-        ],
-      });
+      const seasonPlan = await PlanoTemporada.findOne({where: { idPlanoTemporada: id }});
       return res.status(200).json(seasonPlan);
     } catch (error) {
       return res.status(500).json(error.message)

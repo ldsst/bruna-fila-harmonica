@@ -10,6 +10,7 @@ const RehearsalService = require('./RehearsalService')
 const SeasonPlanService = require('./SeasonPlanService')
 const SongwriterService = require('./SongwriterService')
 const UserService = require('./UserService')
+const PeopleService = require('./PeopleService')
 
 
 
@@ -25,5 +26,6 @@ module.exports = {
   RehearsalService: RehearsalService,
   SeasonPlanService: SeasonPlanService,
   SongwriterService: SongwriterService,
-  UserService: UserService
+  UserService: UserService,
+  PeopleService: PeopleService
 }

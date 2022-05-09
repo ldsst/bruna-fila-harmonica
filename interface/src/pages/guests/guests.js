@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Card } from 'antd'
 import { Table } from './components'
 
-const Guest = () => (
+const Guests = () => (
   <div className='tabled'>
     <Row>
       <Col span={24}>
@@ -14,4 +14,4 @@ const Guest = () => (
   </div>
 )
 
-export default Guest
+export default Guests

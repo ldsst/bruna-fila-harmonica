@@ -12,6 +12,7 @@ const Guest = require('./guestRoute')
 const Rehearsal = require('./rehearsalRoute')
 const Concert = require('./concertRoute')
 const Musician = require('./musicianRoute')
+const People = require('./peopleRoute')
 
 class Router {
     constructor(app) {
@@ -27,6 +28,7 @@ class Router {
         this.rehearsal = new Rehearsal()
         this.concert = new Concert()
         this.musician = new Musician()
+        this.people = new People()
         
     }
 
@@ -46,6 +48,7 @@ class Router {
         this.app.use(this.rehearsal.init());
         this.app.use(this.concert.init())
         this.app.use(this.musician.init())
+        this.app.use(this.people.init())
     }
 }
 

@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    const Compositor = sequelize.define('compositor', {
+    const Compositor = sequelize.define('Compositor', {
         idCompositor: {
             type: DataTypes.INTEGER,
             primaryKey: true,

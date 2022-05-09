@@ -29,9 +29,20 @@ const CustomTable = () => {
     setFiltredArr(apiData)
   }, [apiData])
 
+  const searchFor = (value, item) =>
+    item.name.toLowerCase().includes(value.toLowerCase()) ||
+    item.compositor.toLowerCase().includes(value.toLowerCase()) ||
+    item.obra.toLowerCase().includes(value.toLowerCase()) ||
+    item.serie.toLowerCase().includes(value.toLowerCase()) ||
+    item.regente.toLowerCase().includes(value.toLowerCase()) ||
+    item.solista.toLowerCase().includes(value.toLowerCase()) ||
+    item.cidade.toLowerCase().includes(value.toLowerCase()) ||
+    item.local.toLowerCase().includes(value.toLowerCase()) ||
+    item.arranjador.toLowerCase().includes(value.toLowerCase())
+
   return (
     <Row>
-      <THead />
+      <THead setAux={setFiltredArr} searchFor={searchFor} data={apiData} />
       <TBody
         setApiData={setApiData}
         filtredData={filtredArr}

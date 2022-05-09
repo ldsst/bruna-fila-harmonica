@@ -88,19 +88,19 @@ const TableBody = ({ filtredData, setApiData, isLoading, hasError }) => {
     })
   }
 
-  const showDeleteConfirm = guestId => {
+  const showDeleteConfirm = guest => {
     confirm({
       title: 'Você confirma a exclusão de:',
       icon: <ExclamationCircleOutlined />,
-      content: 'NOME DO CONVIDADO AQUI',
+      content: <strong>{guest.nome}</strong>,
       okText: 'Sim',
       okType: 'danger',
       cancelText: 'Não',
       async onOk() {
         try {
           setIsLoadingDelete(true)
-          await api.delete(`/guest/${guestId}`)
-          setApiData(prevState => prevState.filter(guest => guest.idConvidado !== guestId))
+          await api.delete(`/guest/${guest.idConvidado}`)
+          setApiData(prevState => prevState.filter(g => g.idConvidado !== guest.idConvidado))
         } catch (err) {
           setError(err.response.data)
         } finally {
@@ -156,7 +156,7 @@ const TableBody = ({ filtredData, setApiData, isLoading, hasError }) => {
           </div>
 
           <div className='ant-employed'>
-            <span className='action' onClick={() => showDeleteConfirm(guest.idConvidado)}>
+            <span className='action' onClick={() => showDeleteConfirm(guest)}>
               Excluir
             </span>
           </div>

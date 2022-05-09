@@ -1,18 +1,29 @@
 import React from 'react'
 
 import { Col, Button } from 'antd'
+import { SearchField } from '../../../../components'
 
-const TableHeader = () => (
+const TableHeader = ({ data, setAux, searchFor }) => (
   <Col
     sm={22}
     md={23}
     lg={24}
     style={{
       display: 'flex',
-      justifyContent: 'flex-end',
+      justifyContent: 'space-between',
       padding: '10px'
     }}
   >
+    <Col
+      span={7}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        marginLeft: '20px'
+      }}
+    >
+      <SearchField setAuxData={setAux} searchFor={searchFor} data={data} />
+    </Col>
     <Col
       sm={3}
       md={4}

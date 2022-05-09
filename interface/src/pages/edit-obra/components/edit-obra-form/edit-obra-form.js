@@ -11,7 +11,7 @@ const EditObrasForm = () => {
   const [componentSize] = useState('default')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
-  const [currHistory, setCurrObras] = useState({})
+  const [currObras, setCurrObras] = useState({})
 
   useEffect(() => {
     const getObras = async () => {
@@ -44,70 +44,70 @@ const EditObrasForm = () => {
       style={{ padding: '24px' }}
     >
       <Form.Item label='Nome da obra' name='nomeObra'>
-        <Input placeholder={currHistory.nomeObra} />
+        <Input placeholder={currObras.nomeObra} />
       </Form.Item>
       <Form.Item
         label='Arranjador'
         name='arranjador'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.arranjador} />
+        <Input placeholder={currObras.arranjador} />
       </Form.Item>
       <Form.Item
         label='Ano / período de composição'
         name='anoPeriodoComposicao'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.anoPeriodoComposicao} />
+        <Input placeholder={currObras.anoPeriodoComposicao} />
       </Form.Item>
       <Form.Item
         label='Duração'
         name='duracao'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.duracao} />
+        <Input placeholder={currObras.duracao} />
       </Form.Item>
       <Form.Item
         label='Instrumentação Codifcada'
         name='intrumentacaoCodificada'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.intrumentacaoCodificada} />
+        <Input placeholder={currObras.intrumentacaoCodificada} />
       </Form.Item>
       <Form.Item
         label='Instrumentação por extenso'
         name='instrumentacaoExtenso'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.instrumentacaoExtenso} />
+        <Input placeholder={currObras.instrumentacaoExtenso} />
       </Form.Item>
       <Form.Item
         label='Quantidade de Movimentos'
         name='qtdMovimentos'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.qtdMovimento} />
+        <Input placeholder={currObras.qtdMovimento} />
       </Form.Item>
       <Form.Item
         label='Detalhes da obra'
         name='detalhesObra'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.detalhesObra} />
+        <Input placeholder={currObras.detalhesObra} />
       </Form.Item>
       <Form.Item
         label='Efemérides'
         name='efemerides'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.efemerides} />
+        <Input placeholder={currObras.efemerides} />
       </Form.Item>
       <Form.Item
         label='Observações'
         name='observacoes'
         rules={[{ min: 3, message: 'This field is too short' }]}
       >
-        <Input placeholder={currHistory.observacoes} />
+        <Input placeholder={currObras.observacoes} />
       </Form.Item>
       {error && <p className='font-semibold text-muted text-center redtext'>{error}</p>}
       <Form.Item>

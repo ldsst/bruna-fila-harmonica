@@ -29,9 +29,12 @@ const CustomTable = () => {
     setFiltredArr(apiData)
   }, [apiData])
 
+  const searchFor = (value, item) =>
+    item.nomeObra.toLowerCase().includes(value.toLowerCase())
+
   return (
     <Row>
-      <THead />
+      <THead setAux={setFiltredArr} searchFor={searchFor} data={apiData} />
       <TBody
         setApiData={setApiData}
         filtredData={filtredArr}
